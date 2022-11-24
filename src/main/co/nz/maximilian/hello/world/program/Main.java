@@ -4,11 +4,12 @@ public class Main {
 
     public static void main(String[] args) {
         
-        // Make a new instance of the "main.co.nz.maximilian.hello.world.program.HelloWorld" class
-        main.co.nz.maximilian.hello.world.program.HelloWorld myFirstHelloWorld = new main.co.nz.maximilian.hello.world.program.HelloWorld();
+        // Make a new hello world using the factory
+        HelloWorldFactory myFirstHelloWorldFactory = new HelloWorldFactory();        
+        HelloWorld myFirstHelloWorld = myFirstHelloWorldFactory.createHelloWorld();
 
-        
-        myFirstHelloWorld.PrintHelloWorld(true);
+        // Print hello world
+        myFirstHelloWorld.printHelloWorld(true, myFirstHelloWorld);
 
     }
     
