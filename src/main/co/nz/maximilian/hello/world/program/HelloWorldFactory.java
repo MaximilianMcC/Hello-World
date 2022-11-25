@@ -5,6 +5,9 @@ public class HelloWorldFactory {
     
     public HelloWorld createHelloWorld() {
 
+        // Make the empty hello world thing
+        HelloWorld helloWorld = new HelloWorld();
+
         // Find all of the letters and special characters we need to print hello world
         String helloWorldString = "Hello, world!";
         for (int i = 0; i < helloWorldString.length(); i++) {
@@ -13,7 +16,7 @@ public class HelloWorldFactory {
             for (upperCaseLetters currentUpperCaseLetter : upperCaseLetters.values()) {
                 
                 if (currentUpperCaseLetter.letter == helloWorldString.charAt(i)) {
-    
+                    helloWorld.contents.add(currentUpperCaseLetter.letter);
                 }
             }
 
@@ -21,7 +24,7 @@ public class HelloWorldFactory {
             for (lowerCaseLetters currentLowerCaseLetter : lowerCaseLetters.values()) {
 
                 if (currentLowerCaseLetter.letter == helloWorldString.charAt(i)) {
-
+                    helloWorld.contents.add(currentLowerCaseLetter.letter);
                 }
             }
 
@@ -29,15 +32,13 @@ public class HelloWorldFactory {
             for (specialCharacters currentSpecialCharacter : specialCharacters.values()) {
 
                 if (currentSpecialCharacter.specialCharacter == helloWorldString.charAt(i)) {
-                    
+                    helloWorld.contents.add(currentSpecialCharacter.specialCharacter);
                 }
             }
         }
         
-
-
-
-        return new HelloWorld();
+        // Give back the hello world
+        return helloWorld;
     }
 
 }

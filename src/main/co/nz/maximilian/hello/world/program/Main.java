@@ -9,7 +9,7 @@ public class Main {
         HelloWorld myFirstHelloWorld = myFirstHelloWorldFactory.createHelloWorld();
 
         // Print hello world
-        myFirstHelloWorld.printHelloWorld(true, myFirstHelloWorld);
+        myFirstHelloWorld.printHelloWorld(true);
 
     }
     
