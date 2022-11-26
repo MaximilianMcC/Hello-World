@@ -9,13 +9,19 @@ public class Main {
 
 
 
+        try {
+            // Make a new hello world using the factory
+            HelloWorldFactory myFirstHelloWorldFactory = new HelloWorldFactory();        
+            HelloWorld myFirstHelloWorld = myFirstHelloWorldFactory.createHelloWorld();
 
-        // Make a new hello world using the factory
-        HelloWorldFactory myFirstHelloWorldFactory = new HelloWorldFactory();        
-        HelloWorld myFirstHelloWorld = myFirstHelloWorldFactory.createHelloWorld();
+            // Print hello world
+            myFirstHelloWorld.printHelloWorld(true);
+            
+        } catch (Exception e) {
 
-        // Print hello world
-        myFirstHelloWorld.printHelloWorld(true);
+            // Catch errors
+            ErrorCatcher.catchError(e);
+        }
 
 
 

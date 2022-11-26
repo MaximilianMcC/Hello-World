@@ -86,8 +86,7 @@ public class HelloWorldFactory {
         } catch(Exception e) {
             
             // Catch errors
-            System.err.println("Bruh hello world error:\n");
-            e.printStackTrace();
+            ErrorCatcher.catchError(e);
         }
 
 
