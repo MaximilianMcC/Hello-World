@@ -60,18 +60,23 @@ public class HelloWorldFactory {
 
             // Loop through each line and match it to hello world regex
             String currentHelloWorldLine;
-            Pattern helloWorldStringRegexPattern = Pattern.compile("Hello, World!");
+            Pattern helloWorldRegexPatternToFind = Pattern.compile("Hello, World!");
 
             while ((currentHelloWorldLine = helloWorldBufferedReaderInputStreamReader.readLine()) != null) {
 
-                Matcher helloWorldStringRegexPatternMatches = helloWorldStringRegexPattern.matcher(currentHelloWorldLine);
-                Boolean foundHelloWorldStringInCurrentLine = helloWorldStringRegexPatternMatches.find();
+                Matcher helloWorldRegexPatternToFindMatches = helloWorldRegexPatternToFind.matcher(currentHelloWorldLine);
 
-                if (foundHelloWorldStringInCurrentLine == true) {
-                    
-                    System.out.println(currentHelloWorldLine);
-                    
+                if (helloWorldRegexPatternToFindMatches.find() == true) {
+
+                    // Get the Hello World string
+                    String helloWorldRegexPatternToFindMatch = helloWorldRegexPatternToFindMatches.group(0);
+                    helloWorldString = helloWorldRegexPatternToFindMatch;
+
+                    // Fall out of the loop to save time (this is very efficient program)
+                    break;
                 }
+                
+
             }
 
             // Close the hello world buffered read input stream reader because it's no longer needed
